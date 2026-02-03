@@ -160,6 +160,10 @@ $response->assertDom('.card', fn (DomAssert $el) => $el
 );
 ```
 
+## Similar Packages
+
+- [sinnbeck/laravel-dom-assertions](https://github.com/sinnbeck/laravel-dom-assertions): Syntax is a bit different, and it's not using PHP8.4's `Dom\HTMLDocument`
+
 ## License
 
 MIT
