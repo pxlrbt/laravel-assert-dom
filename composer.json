@@ -6,7 +6,8 @@
     "authors": [
         {
             "name": "Dennis Koch",
-            "email": "hey@denniskoch.dev"
+            "email": "hey@denniskoch.dev",
+            "homepage": "https://denniskoch.dev",
         }
     ],
     "require": {
