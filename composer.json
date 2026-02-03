@@ -11,7 +11,8 @@
     ],
     "require": {
         "php": "^8.4",
-        "illuminate/testing": "^11.0|^12.0"
+        "illuminate/testing": "^11.0|^12.0",
+        "ext-dom": "*"
     },
     "require-dev": {
         "laravel/pint": "^1.0",
