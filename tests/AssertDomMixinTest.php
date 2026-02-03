@@ -8,12 +8,11 @@ use pxlrbt\LaravelAssertDom\Assertions\DomAssert;
 
 function createTestResponse(string $content): TestResponse
 {
-    $response = new class ($content) {
+    $response = new class($content)
+    {
         public ?Throwable $exception = null;
 
-        public function __construct(private string $content)
-        {
-        }
+        public function __construct(private string $content) {}
 
         public function getContent(): string
         {
@@ -36,12 +35,11 @@ function createLivewireTestResponse(string $html): TestResponse
         ],
     ];
 
-    $response = new class ($livewirePayload) {
+    $response = new class($livewirePayload)
+    {
         public ?Throwable $exception = null;
 
-        public function __construct(private array $payload)
-        {
-        }
+        public function __construct(private array $payload) {}
 
         public function getContent(): string
         {
@@ -53,7 +51,7 @@ function createLivewireTestResponse(string $html): TestResponse
 }
 
 beforeAll(function () {
-    TestResponse::mixin(new AssertDomMixin());
+    TestResponse::mixin(new AssertDomMixin);
 });
 
 describe('assertDom()', function () {
@@ -66,8 +64,8 @@ describe('assertDom()', function () {
         $response->assertDom(
             '.card',
             fn (DomAssert $dom) => $dom
-            ->toBeTag('div')
-            ->toHave('h1')
+                ->toBeTag('div')
+                ->toHave('h1')
         );
     });
 
@@ -80,8 +78,8 @@ describe('assertDom()', function () {
         $response->assertDom(
             '.card',
             fn (DomAssert $dom) => $dom
-            ->toBeTag('div')
-            ->toHave('h1')
+                ->toBeTag('div')
+                ->toHave('h1')
         );
     });
 
@@ -116,8 +114,8 @@ describe('assertDom()', function () {
         $response->assertDom(
             '.profile',
             fn (DomAssert $dom) => $dom
-            ->toHave('.name', fn (DomAssert $name) => $name->text()->toEqual('John Doe'))
-            ->toHave('.email', fn (DomAssert $email) => $email->text()->toContain('@'))
+                ->toHave('.name', fn (DomAssert $name) => $name->text()->toEqual('John Doe'))
+                ->toHave('.email', fn (DomAssert $email) => $email->text()->toContain('@'))
         );
     });
 });

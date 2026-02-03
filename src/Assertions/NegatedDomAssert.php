@@ -12,8 +12,7 @@ class NegatedDomAssert
 {
     public function __construct(
         private DomAssert $assert,
-    ) {
-    }
+    ) {}
 
     public function toHave(string $selector, int|Closure|null $countOrCallback = null): DomAssert
     {

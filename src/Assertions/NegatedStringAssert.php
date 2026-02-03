@@ -10,8 +10,7 @@ class NegatedStringAssert
 {
     public function __construct(
         private StringAssert $assert,
-    ) {
-    }
+    ) {}
 
     public function toEqual(string $expected): DomAssert
     {
