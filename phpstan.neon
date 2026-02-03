@@ -1,0 +1,11 @@
+parameters:
+    level: 9
+    paths:
+        - src
+    ignoreErrors:
+        -
+            identifiers:
+                - varTag.nativeType
+                - method.notFound
+                - missingType.generics
+            path: src/AssertDomMixin.php

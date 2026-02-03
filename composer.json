@@ -1,0 +1,44 @@
+{
+    "name": "pxlrbt/laravel-assert-dom",
+    "description": "DOM assertions with Pest-like syntax for Laravel & Livewire",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dennis Koch",
+            "email": "hey@denniskoch.dev"
+        }
+    ],
+    "require": {
+        "php": "^8.4",
+        "illuminate/testing": "^11.0|^12.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.0",
+        "pestphp/pest": "^3.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "pxlrbt\\LaravelAssertDom\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "pxlrbt\\LaravelAssertDom\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "pest",
+        "analyse": "phpstan analyse",
+        "format": "pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
