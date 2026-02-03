@@ -3,6 +3,8 @@
 declare(strict_types=1);
 
 use Dom\HTMLDocument;
+use Illuminate\Testing\TestResponse;
+use pxlrbt\LaravelAssertDom\AssertDomMixin;
 use pxlrbt\LaravelAssertDom\Assertions\DomAssert;
 
 function domAssert(string $html, string $selector): DomAssert
@@ -16,6 +18,10 @@ function domAssert(string $html, string $selector): DomAssert
 
     return new DomAssert($element, $selector);
 }
+
+beforeAll(function () {
+    TestResponse::mixin(new AssertDomMixin);
+});
 
 describe('text()', function () {
     it('asserts text equals', function () {
